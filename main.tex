@@ -1,0 +1,52 @@
+\documentclass{report}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{tabularx}
+\usepackage{mathtools ,amssymb ,amsthm} % imports  amsmath
+\usepackage{nameref}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{tgbonum}
+\usepackage[table]{xcolor}
+\usepackage{subfiles} % Best loaded last in the preamble
+
+\title{LINAL - Spick}
+\author{Johanna Koch}
+\date{ }
+
+\begin{document}
+{\fontfamily{lmss}\selectfont
+
+    \maketitle
+    \tableofcontents
+    
+    \subfile{chapters/sw01_vektoren_matrizen_gleichungssysteme.tex}
+
+}
+\end{document}
+
+% \begin{pmatrix}0\\0\end{pmatrix}
+% \noindent\rule{8cm}{0.4pt} \\
+
+\iffalse
+\begin{tabularx}{0.8\textwidth} { 
+    >{\centering\arraybackslash}X 
+    >{\centering\arraybackslash}X  }
+    \begin{math}
+        {}
+    \end{math}
+    &
+    \begin{math}
+        {}
+    \end{math}
+    \\ [7pt]
+    \begin{math}
+        {}
+    \end{math}
+    &
+    \begin{math}
+        {}
+    \end{math}
+    \\ [7pt]
+\end{tabularx}
+\fi
