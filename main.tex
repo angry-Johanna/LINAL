@@ -8,6 +8,21 @@
 \usepackage{amsmath}
 \usepackage{tgbonum}
 \usepackage[table]{xcolor}
+% use package for pretty circle
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+    \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+% use package for line in matrix
+\usepackage{amsmath}
+    \makeatletter
+    \renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+      \hskip -\arraycolsep
+      \let\@ifnextchar\new@ifnextchar
+      \array{#1}}
+    \makeatother
+
+
 \usepackage{subfiles} % Best loaded last in the preamble
 
 \title{LINAL - Spick}
@@ -21,6 +36,7 @@
     \tableofcontents
     
     \subfile{chapters/sw01_vektoren_matrizen_gleichungssysteme.tex}
+    \subfile{chapters/sw02_lin_gleich_1.tex}
 
 }
 \end{document}

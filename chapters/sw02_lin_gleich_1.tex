@@ -1,0 +1,120 @@
+\documentclass[../main.tex]{subfiles}
+
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                           %
+% Lineare Gleichungssysteme lösen 1: Gausselimination, Lösbarkeitskriterien %
+%                                                                           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Lineare Gleichungssysteme lösen 1: Gausselimination, Lösbarkeitskriterien}
+
+\section{Begriffe}
+\subsection{Leitkoeffizient}
+Den ersten Eintrag einer Zeile, der nicht verschwindet, nennt man Leitkoeffizient (hier eingekreist). \\
+
+$\begin{bmatrix}[ccc|c]
+    \circled{2} & 5 & -2 & -3 \\
+    \circled{3} & 0 & 1 &  7 \\
+    0 & 0 & \circled{8} &  10 \\
+\end{bmatrix}$
+
+\subsection{Zeilenstufenform ZFS}
+Steht in einer Matrix jeder Leitkoeffizient weiter rechts als der Leitkoeffizient in der Zeile darüber
+und stehen alle Zeilen ohne Leitkoeffizient (also solche, in denen nur Nullen stehen) ganz unten,
+hat die Matrix die Zeilenstufenform (ZFS). (Hier eingekreist)
+\begin{itemize}
+    \item Die Leitkoeffizienten müssen nicht zwangsläufig alle auf der Hauptdiagonalen stehen.
+    \item Eine quadratische Matrix heisst obere Dreieckmatrix, wenn alle Einträge unter der Hauptdiagonalen Null sind. 
+    \item Analog dazu definiert man auch eine untere Dreieckmatrix.
+\end{itemize}
+
+$\begin{bmatrix}[cccc|c]
+    \circled{2} & 5 & -2 & -1 & -3 \\
+    0 & 0 & \circled{3} & -2 &  7 \\
+    0 & 0 & 0 & \circled{8} &  10 \\
+    0 & 0 & 0 & 0 & 0 \\
+\end{bmatrix}$
+
+\subsection{Pivotelemente}
+Die Leitkoeffiziente, die man durch Vertauschen der Zeilen möglichst weit links bringt,
+nenn man Pivotelemente. \\
+
+$\begin{bmatrix}
+    0 & 0 & -1 & 5  \\
+    2 & -2 & 1 & 3 \\
+    4 & -4 & 3 & 8 \\
+\end{bmatrix} \rightarrow$
+$\begin{bmatrix}
+    \circled{2} & -2 & 1 & 3 \\
+    0 & 0 & -1 & 5  \\
+    4 & -4 & 3 & 8 \\
+\end{bmatrix}$
+
+\section{Gauss-Eliminationsverfahren}
+Beim Gauss-Verfahren geht es darum, lineare Gleichungssysteme so umzuformen, dass sich eine
+Zeilenstufenform ergibt. Dann wird durch Rückwärtseinsetzen eine eindeutige Lösung bestimmt,
+falls das LGS lösbar ist. Dabei geht man Schritt für Schritt vor und wendet in jedem Schritt
+eine sogenannte elementare Zeilenstufenform (EZ) auf die EKM (erweiterte Koeffizientenmatrix) an. Davon gibt es drei Typen: \\
+
+\begin{enumerate}
+    \item Man darf eine Zeile der EKM  mit einem Faktor, der nicht Nul ist, multiplizieren.
+    \item Man darf zwei Zeilen der EKM vertauschen.
+    \item Man darf das Vielfache einer Zeile zu einer anderen addieren.
+\end{enumerate}
+
+\subsection{Beispiel}
+Die EKM (erweiterte Koeffizientenmatrix) ist: \\
+
+$\begin{bmatrix}[ccc|c]
+    1 & 2 & 1& 2  \\
+    3 & 8 & 1 & 12 \\
+    0 & 4 & 1 & 2 \\
+\end{bmatrix}$ 
+\\ [7pt]
+Das daraus resultierende LGS (lineare Gleichungssystem): \\
+$x + 2y + z = 2$ \\
+$3x + 8y + z = 12$ \\
+$ 4y + z = 2$
+\\ [7pt]
+Im EKS alle Elemente unterhalb der Diagonalen Null bekommen (eingekreist): \\ [7pt]
+$\begin{bmatrix}[ccc|c]
+    1 & 2 & 1& 2  \\
+    \circled{3} & 8 & 1 & 12 \\
+    \circled{0} & \circled{4} & 1 & 2 \\
+\end{bmatrix}$ 
+\\ [7pt]
+Zweite Zeile minus drei mal die erste Zeile: \\ [7pt]
+$\begin{bmatrix}[ccc|c]
+    1 & 2 & 1& 2  \\
+    0 & 2 & -2 & 6 \\
+    0 & 4 & 1 & 2 \\
+\end{bmatrix}$ 
+\\ [7pt]
+Dritte Zeile minus zwei mal die zweite Zeile: \\ [7pt]
+$\begin{bmatrix}[ccc|c]
+    1 & 2 & 1& 2  \\
+    0 & 2 & -2 & 6 \\
+    0 & 0 & 5 & -10 \\
+\end{bmatrix}$ 
+\\ [7pt]
+Zweite Zeile durch 2 dividieren, dritte Zeile durch 5 dividieren: \\ [7pt]
+$\begin{bmatrix}[ccc|c]
+    1 & 2 & 1& 2  \\
+    0 & 1 & -1 & 3 \\
+    0 & 0 & 1 & -2 \\
+\end{bmatrix}$ 
+\\ [7pt]
+Nun einfaches LGS auflösen: \\ [7pt]
+$x+2y+z=2$ \\
+$y-z=3$ \\
+$z=-2$ \\
+$\Rightarrow z=-2; y=1; x=2$
+
+\section{Lösbarkeit eines LGS}
+TODO
+
+
+
+\end{document}

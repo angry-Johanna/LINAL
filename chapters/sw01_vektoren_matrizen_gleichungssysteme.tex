@@ -148,7 +148,17 @@ $\mathbf{A} \vec{x}=
 \end{bmatrix}$
 
 \subsection{Matrixmultiplikation}
-Vorerst überspringen
+Das Produkt der (m$\times$n)-Matrix $A=[a_{i,j}]$ und der (n$\times$p)-Matrix $B=[ab_{i,j}]$ ist eine (m$\times$p)-Matrix $C=[c_{i,j}]$ definiert durch: \\
+$C=AB=[c_{i,j}]$ wobei 
+$c_{i,j}=a_{i,1}b_{1,j}+a_{i,2}b_{2,j}+...a_{i,k}b_{k,j}=$
+$\sum\limits_{l=1}^ka_{i,l}b_{l,j}$ 
+\begin{itemize}
+    \item $c_{i,j}$ ist das Skalarprodukt des $i$ Zeilenvektors von $A$ mit dem $j$. Spaltenvektor von $B$.
+    \item Beachte: Anzahl Spalten von $A$ (n) müssen mit der Anzahl Zeilen von $B$ (n) übereinstimmen um die beiden Matrizen multiplizieren zu können.
+\end{itemize}
+\subsubsection{Beispiel}
+\includegraphics{matrizen_multiplikation.JPG}
+
 
 
 \section{Gleichungssysteme}
