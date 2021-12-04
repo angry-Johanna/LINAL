@@ -1,0 +1,122 @@
+\documentclass[../main.tex]{subfiles}
+
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                                                                 %
+% Lineare Gleichungssysteme lösen 2: Gausselimination und Optimierung beim Ermittelnder Lösung durch LU-Zerlegung %
+%                                                                                                                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Lineare Gleichungssysteme lösen 2: Gausselimination und Optimierung beim Ermittelnder Lösung durch LU-Zerlegung}
+
+\section{Einheitsmatrix}
+Eine quadratische Matrix, in deren Hauptdiagonale nur Einsen stehen und deren sämtliche
+andere Einträge verschwinden (Null sind), nennt mann Einheitsmatrix (engl. identity matrix).
+Hat so eine Matrix die Dimension $n\times n$, so schreibt man für sie eins der Symbole $_En$ oder $I_n$. \\ [7pt]
+
+$\mathbf{E_4}=\mathbf{I_4}=
+\begin{bmatrix}
+    1 & 0 & 0 & 0 \\
+    0 & 1 & 0 & 0 \\
+    0 & 0 & 1 & 0 \\
+    0 & 0 & 0 & 1 \\
+\end{bmatrix}$ \\ [7pt]
+Eine Einheitsmatrix $\mathbf{E}$ hat die Eigenschaft, dass $\mathbf{EA}=\mathbf{AE}=\mathbf{A}$.
+Einheitsmatrizen sind also neutrale Elemente bezgl. der Matrizenmultiplikation.
+
+\section{Transponierte Matrix}
+Eine Matrix $\mathbf{A}$ ist transponiert, wenn man die Matrix an ihrer Hauptdiagonalen spiegelt.
+In anderen Worten: Eine Matrix $\mathbf{A}$ ist transponiert, wenn man ihre Zeilen und Spalten von der 
+Matrix $\mathbf{A}$ vertauscht. Transponierte Matrix $\mathbf{A}$ schreibt man $\mathbf{A^T}$. 
+Es gibt einen wichtigen Zusammenhang zwischen Transposition und Matrizenmultiplikation: \\ [7pt]
+
+$(\mathbf{A} \cdot \mathbf{B})^T=\mathbf{B}^T \cdot \mathbf{A}^T$ \\ [7pt]
+
+$\mathbf{A} = 
+\begin{bmatrix}
+    4 & 5 & 0 \\
+    -2 & -2 & 8 \\
+    -1 & 4 & 3 \\
+    7 & 0 & -6 \\
+\end{bmatrix},
+\mathbf{A}^T = 
+\begin{bmatrix}
+    4 & -2 & -1 & 7 \\
+    5 & -2 & -4 & 0 \\
+    0 & 8 & 3 & -6 \\
+\end{bmatrix}$
+
+\section{Invertierbare oder reguläre Matrix}
+Sei $\mathbf{A}$ eine quadratische $n\times n$-Matrix. $\mathbf{A}$ heisst eine invertierbare oder reguläre 
+(auch non-singuläre) Matrix, wenn es eine $n\times n$-Matrix $\mathbf{B}$ existiert so, dass: \\ [7pt]
+$\mathbf{A} \cdot \mathbf{B} = I_n = E_n = \mathbf{B} \cdot \mathbf{A}$ \\ [7pt]
+Dann nennt man $\mathbf{B}$ die inverse Matrix zu $\mathbf{A}$ und schreibt sie als $\mathbf{A}^{-1}$
+
+\subsection{Beispiel}
+$A=
+\begin{bmatrix}
+    1 & 3 \\
+    2 & 7 \\
+\end{bmatrix},
+B=A^{-1}=
+\begin{bmatrix}
+    7 & -3 \\
+    -2 & 1 \\
+\end{bmatrix}$ \\ [7pt]
+
+$\begin{bmatrix}
+    1 & 3 \\
+    2 & 7 \\
+\end{bmatrix} \cdot
+\begin{bmatrix}
+    7 & -3 \\
+    -2 & 1 \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+    1 & 0 \\
+    0 & 1 \\
+\end{bmatrix}$
+
+\section{Rechenregeln}
+$\mathbf{AB}\cdot(\mathbf{AB})^{-1}=I$ \\ [7pt]
+$(\mathbf{AB})^{-1} = \mathbf{A^{-1} \cdot B^{-1}}$ \\ [7pt]
+$(\mathbf{A^{-1} \cdot B^{-1}})\cdot \mathbf{AB} = I$
+
+\section{Permutationsmatrix}
+Die Permutationsmatrix $\mathbf{P}$ ist eine quadratische $(n\times n)$-Matrix, die in jeder Zeile und jeder
+Spalte genau einen Eintrag von eins (1) und an anderer Stelle Nullen (0) hat. Die
+Multiplikation jeder Matrix $\mathbf{A}$ mit der Matrix $\mathbf{P}$ führt zum Vertauschen der Zeilen oder Spalten
+der Matrix $\mathbf{A}$. Zur Permutation der Zeilen oder Spalten der Matrix $\mathbf{A}$ wird $\mathbf{PA}$
+(Vormultiplizieren) oder $\mathbf{AP}$ (Nachmultiplizieren) durchgeführt. \\
+Mit anderen Worten: Die Permutationsmatrix $\mathbf{P}$ ist eine Einheitsmatrix, wo die Zeilen umgeordnet sind.
+
+\subsection{Beispiel}
+$I=\begin{bmatrix}
+    1 & 0 \\
+    0 & 1 \\
+\end{bmatrix} \rightarrow
+\begin{bmatrix}
+    0 & 1 \\
+    1 & 0 \\
+\end{bmatrix} = $ Permutationsmatrix \\ [7pt]
+
+$\begin{bmatrix}
+    2 & 3 \\
+    4 & -5 \\
+\end{bmatrix} \cdot
+\begin{bmatrix}
+    0 & 1 \\
+    1 & 0 \\
+\end{bmatrix} = 
+\begin{bmatrix}
+    4 & -5 \\
+    2 & 3 \\
+\end{bmatrix}$
+
+\section{TODO: LU-Zerlegung}
+
+
+
+\end{document}
