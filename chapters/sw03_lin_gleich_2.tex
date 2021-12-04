@@ -51,7 +51,13 @@ $\mathbf{A} =
 Sei $\mathbf{A}$ eine quadratische $n\times n$-Matrix. $\mathbf{A}$ heisst eine invertierbare oder reguläre 
 (auch non-singuläre) Matrix, wenn es eine $n\times n$-Matrix $\mathbf{B}$ existiert so, dass: \\ [7pt]
 $\mathbf{A} \cdot \mathbf{B} = I_n = E_n = \mathbf{B} \cdot \mathbf{A}$ \\ [7pt]
-Dann nennt man $\mathbf{B}$ die inverse Matrix zu $\mathbf{A}$ und schreibt sie als $\mathbf{A}^{-1}$
+Dann nennt man $\mathbf{B}$ die inverse Matrix zu $\mathbf{A}$ und schreibt sie als $\mathbf{A}^{-1}$ \\ [7pt]
+
+Die inverse Matrix einer quadratischen $(n\times n)$-Matrix $\mathbf{A}$ (falls sie existiert) ist eine $(n\times n)$-Matrix $\mathbf{A^{-1}}$, wenn: \\ [7pt]
+$\mathbf{A^{-1}}\cdot \mathbf{A} = I_n$ (eine linke Inverse) und \\ [7pt]
+$\mathbf{A}\cdot \mathbf{A^{-1}} = I_n$ (eine rechte Inverse) \\ [7pt]
+\textbf{Wichtig!!} Der Algorithmus zur Prüfung der Invertierbarkeit einer Matrix $\mathbf{A}$ ist das Gauss-Jordan-Eliminationsverfahren: 
+$\mathbf{A}$ muss $n$ (von Null verschiedene) Pivotelemente haben.
 
 \subsection{Beispiel}
 $A=
@@ -77,7 +83,8 @@ $\begin{bmatrix}
 \begin{bmatrix}
     1 & 0 \\
     0 & 1 \\
-\end{bmatrix}$
+\end{bmatrix}$ \\ [7pt]
+
 
 \section{Rechenregeln}
 $\mathbf{AB}\cdot(\mathbf{AB})^{-1}=I$ \\ [7pt]
